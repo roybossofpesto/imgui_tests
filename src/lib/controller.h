@@ -24,6 +24,9 @@ public:
 
 private:
     std::shared_ptr<Display> m_spDisplay;
+    bool my_tool_active = false;
+    bool second_active = false;
+
 };
 
 }

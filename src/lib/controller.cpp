@@ -15,7 +15,6 @@ void Controller::Render(const Rect4f& rc)
     GetDisplay()->DrawChars(rc.TopLeft() + glm::vec2(120, 120), 0xFFFF8866, "Prout");
 
     // Create a window called "My First Tool", with a menu bar.
-    bool my_tool_active = false;
 
     ImGui::Begin("My First Tool", &my_tool_active, ImGuiWindowFlags_MenuBar);
     if (ImGui::BeginMenuBar())
@@ -24,11 +23,26 @@ void Controller::Render(const Rect4f& rc)
         {
             if (ImGui::MenuItem("Open..", "Ctrl+O")) { /* Do stuff */ }
             if (ImGui::MenuItem("Save", "Ctrl+S"))   { /* Do stuff */ }
-            if (ImGui::MenuItem("Close", "Ctrl+W"))  { my_tool_active = false; }
+            if (ImGui::MenuItem("Close", "Ctrl+W"))  { }
             ImGui::EndMenu();
         }
         ImGui::EndMenuBar();
     }
+    ImGui::End();
+
+
+    ImGui::Begin("Prout", &second_active, ImGuiWindowFlags_MenuBar);
+/*    if (ImGui::BeginMenuBar())
+    {
+        if (ImGui::BeginMenu("File"))
+        {
+            if (ImGui::MenuItem("Open..", "Ctrl+O")) {  }
+            if (ImGui::MenuItem("Save", "Ctrl+S"))   {  }
+            if (ImGui::MenuItem("Close", "Ctrl+W"))  { my_tool_active = false; }
+            ImGui::EndMenu();
+        }
+        ImGui::EndMenuBar();
+    }*/
     ImGui::End();
 }
 
