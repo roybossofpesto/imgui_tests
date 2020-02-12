@@ -3,6 +3,7 @@ LIST(APPEND APPLIB_SOURCE
     src/lib/controller.cpp
     src/lib/controller.h
     ${COMMON_SOURCES}
+    ${IMGUI_SOURCES}
     )
 
 LIST(APPEND APPLIB_INCLUDE
